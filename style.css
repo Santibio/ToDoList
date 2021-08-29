@@ -1,0 +1,121 @@
+
+*{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #000;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    cursor: default;
+    margin-bottom: 100px;
+    font-size: 50px;
+    font-weight: lighter; 
+    transition: all 1s ;
+}
+h1:hover{
+  color: #fff;
+}
+h1 span{
+    color: #5FFBF1;
+    font-size: 200px;
+    margin: 0;
+    text-align:left;
+    padding: 0;
+    transition: all 1s ;
+}
+h1 span:hover{
+  color: #d16ba5;
+}
+.list-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 520px;
+    min-width: 320px;
+    gap: 5px; 
+    background-color: rgba(29, 29, 29, 0.3);
+    border-radius: 10px;
+    box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.57);
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.57);
+    margin-bottom:300px;
+    transition: all 3s, ease-in-out;
+}
+
+
+h2,ul,.list-new_item{
+    width: 60%;
+    color: #fff;
+}
+
+h2{
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+ul{
+    height: auto;
+    min-height: min-content;
+    font-weight: 100px;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    list-style: circle inside;
+}
+
+.list-new_item{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.text-item{
+    border: none;
+    margin: 0;
+    width: 65%;
+    background-color: transparent;
+    color: #fff;
+    flex-grow: 1;
+    outline: none;
+    transition: all 1s, ease-in-out;
+    
+}
+
+.text-item:focus{
+  border-bottom: #fff solid 1.5px;  
+}
+
+.text-item::placeholder{
+    color: rgb(207, 203, 203);
+    
+}
+
+.btn-new-item, .btn-delete-item{
+    border: none;
+    background: transparent;
+    color: #fff;
+    margin: 0;
+    font-size: medium;
+    margin-right: 0;
+}
+
+
+
+
+
+
+
