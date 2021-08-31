@@ -16,9 +16,15 @@
 <body>
     <h1 class="tittle">To Do List<span>.</span></h1>
     <div class="list-container shadow-drop-2-center">
-        <h2>Notas</h2>
+        <h2>Notes</h2>
         <div class="list">
-
+            <div class="item">
+                <li contenteditable="true" spellcheck="false" class="li-item">hola</li>
+                <div class="options">
+                    <button class="disable">Save</button>
+                    <button class="delete">Delete</button>
+                </div>
+            </div>
         </div>
         <section class="list-new_item">
             <input type="text" class="text-item" id="list-text" placeholder="Agregar">
@@ -26,7 +32,7 @@
                 <i class="fas fa-plus-circle"></i>
             </button>
             <button class="btn-delete-item" id="list-button_remove">
-                <i class="fas fa-trash"></i>
+                <i class="fas fa-sync-alt"></i>
             </button>
         </section>
     </div>

@@ -3,6 +3,7 @@
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     /* outline: 1px solid red; */
+    transition: all 1s;
 }
 body{
     display: flex;
@@ -51,11 +52,43 @@ h1 span:hover{
     -webkit-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.57);
     -moz-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.57);
     margin-bottom:300px;
-    transition: all 3s, ease-in-out;
+}
+.item{
+    display: flex;
+    flex-direction: row;
+    
+}
+.options{
+
+}
+.li-item{
+    list-style: circle;
+    flex-grow: 1;
+    outline: none;
+    
 }
 
+.disable,.delete{
+    border: none;
+    background: transparent;
+    color: #fff;
+}
 
-h2,ul,.list-new_item{
+.disable{
+    color: rgb(177, 175, 175);
+}
+
+.enabled{
+    border: none;
+    background: transparent;
+    color: #fff;
+}
+
+.delete{
+    color: 
+}
+
+h2,ul,.list-new_item,.list{
     width: 60%;
     color: #fff;
 }

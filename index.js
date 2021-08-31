@@ -27,19 +27,41 @@ IDBResquest.addEventListener("error", () => { console.log("An error accurred") }
 document.querySelector(".btn-new-item").addEventListener("click", () => {
     let listText = document.getElementById("list-text").value;
     if (listText.length > 0) {
-      if (document.querySelector(".enabled") != undefined) {
-        if (confirm("Hay elementos sin guardar: ¿Quieres continuar?")) {
-          addObjeto({ listText });
-          leerObjetos()
+        if (document.querySelector(".enabled") != undefined) {
+            if (confirm("Hay elementos sin guardar: ¿Quieres continuar?")) {
+                addObjeto({ listText });
+                leerObjetos()
+            }
+        } else {
+            addObjeto({ listText });
+            leerObjetos()
         }
-      } else {
-        addObjeto({ listText });
-        leerObjetos()
-      }
     } else {
-      alert("No ingreso la terea")
+        alert("No ingreso la terea")
     }
-  })
+    document.getElementById("list-text").value = ""
+})
+
+addEventListener("keypress", (e) => {
+    if (e.key == "Enter") {
+        let listText = document.getElementById("list-text").value;
+        if (listText.length > 0) {
+            if (document.querySelector(".enabled") != undefined) {
+                if (confirm("Hay elementos sin guardar: ¿Quieres continuar?")) {
+                    addObjeto({ listText });
+                    leerObjetos()
+                }
+            } else {
+                addObjeto({ listText });
+                leerObjetos()
+            }
+        } else {
+            alert("No ingreso la terea")
+        }
+        document.getElementById("list-text").value = ""
+    }
+})
+
 
 // Creo las funciones relacionadas al Data Base
 
@@ -71,6 +93,11 @@ const eliminarObjeto = (key) => {
     IDBData.delete(key);
 }
 
+const eliminarAllObjetos = () => {
+    const IDBData = getIDBData("readwrite", "Item eliminado correctamente");
+    IDBData.clear();
+}
+
 const getIDBData = (mode, msg) => {
     const db = IDBResquest.result;
     const IDBtransaction = db.transaction("items", mode);
@@ -82,10 +109,11 @@ const getIDBData = (mode, msg) => {
 // Funciones relacionadas al DOM
 const itemsHTML = (id, item) => {
     const container = document.createElement("DIV");
-    const h2 = document.createElement("H2");
+    const li = document.createElement("LI");
     const options = document.createElement("DIV");
     const saveButton = document.createElement("BUTTON");
     const deleteButton = document.createElement("BUTTON");
+    // const deleteIcon = document.createElement("i");
 
     container.classList.add("item");
     options.classList.add("options");
@@ -95,23 +123,29 @@ const itemsHTML = (id, item) => {
     saveButton.textContent = "Save";
     deleteButton.textContent = "Delete";
 
-    h2.textContent = item.item
-    h2.setAttribute("contenteditable", "true");
-    h2.setAttribute("spellcheck", "false");
+    li.textContent = item.listText;
+    li.setAttribute("contenteditable", "true");
+    li.setAttribute("spellcheck", "false");
+    li.classList.add("li-item")
+
+    // deleteIcon.classList.add("fas fa-edit");
 
     options.appendChild(saveButton);
     options.appendChild(deleteButton);
 
-    container.appendChild(h2);
+    container.appendChild(li);
     container.appendChild(options);
 
-    h2.addEventListener("keyup", () => {
+    // deleteButton.appendChild(deleteIcon)
+
+
+    li.addEventListener("keyup", () => {
         saveButton.classList.replace("disable", "enabled")
     })
 
     saveButton.addEventListener("click", () => {
         if (saveButton.className == "enabled") {
-            modificarObjeto(id, { nombre: h2.textContent });
+            modificarObjeto(id, { nombre: li.textContent });
             saveButton.classList.replace("enabled", "disable")
         }
     })
@@ -121,9 +155,14 @@ const itemsHTML = (id, item) => {
         leerObjetos()
     })
     return container
-    }
+}
 
-    
+buttonRemove.addEventListener("click", () => {
+    eliminarAllObjetos()
+    leerObjetos()
+})
+
+
 
 
 /*  addEventListener("keypress", (e) => {
