@@ -1,9 +1,9 @@
 
 *{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
     /* outline: 1px solid red; */
-    transition: all 1s;
+    transition: .2s all;
 }
 body{
     display: flex;
@@ -32,7 +32,7 @@ h1 span{
     margin: 0;
     text-align:left;
     padding: 0;
-    transition: all 1s ;
+    transition: all 1s;
 }
 h1 span:hover{
   color: #d16ba5;
@@ -53,14 +53,14 @@ h1 span:hover{
     -moz-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.57);
     margin-bottom:300px;
 }
+
+
+
 .item{
     display: flex;
     flex-direction: row;
-    
 }
-.options{
 
-}
 .li-item{
     list-style: circle;
     flex-grow: 1;
@@ -85,7 +85,7 @@ h1 span:hover{
 }
 
 .delete{
-    color: 
+    color: #fff
 }
 
 h2,ul,.list-new_item,.list{
@@ -98,6 +98,7 @@ h2{
     font-weight: 400;
     margin-bottom: 10px;
     padding: 0;
+    cursor: default;
 }
 
 ul{
@@ -114,6 +115,7 @@ ul{
     margin-top: 30px;
     margin-bottom: 20px;
     display: flex;
+    flex-direction: row;
 }
 
 .text-item{
@@ -137,15 +139,22 @@ ul{
     
 }
 
-.btn-new-item, .btn-delete-item{
+.btn-new-item,.btn-delete-item{
     border: none;
     background: transparent;
     color: #fff;
     margin: 0;
-    font-size: medium;
+    font-size: 18px;
     margin-right: 0;
+    cursor: pointer;
+    transition: all 1s, ease-in-out;
+    text-align: justify;
 }
 
+.btn-new-item:active, .btn-delete-item :active{
+    font-size: 16px;
+    color: rgb(207, 203, 203);
+}
 
 
 
