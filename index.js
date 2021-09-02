@@ -1,5 +1,4 @@
 "use strict";
-
 // Defino los elementos del html
 const listContainer = document.querySelector(".list-container");
 const list = document.querySelector(".list");
