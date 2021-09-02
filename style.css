@@ -16,8 +16,11 @@ body {
     padding: 0;
     overflow: hidden;
 }
-
+.tittle{
+    text-align:center
+}
 h1 {
+    display: inline;
     cursor: default;
     margin-bottom: 100px;
     font-size: 50px;
@@ -198,18 +201,20 @@ ul {
         padding: 0;
     }
     body{
-        height: 2000px;
+        height: 200000px;
         overflow:none;
         margin: 0 10px;
     }
     h1{
+        display: block;
         font-size: 2em;
         margin-bottom: 0;
         margin-top: -120px;
+        height: auto;
     }
     .list-container{
         width: auto;
-        height: 75vh; 
+        height: 78vh; 
     }
 
     .list,h2,.list-new_item,ul{
