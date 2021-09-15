@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ToDoList</title>
     <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/5ac138c5f5.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="icon.png">
 </head>
 
 <body>
-    <div class="tittle"><h1 id="ToDoList">To Do List<span>.</span></h1></div>
-    <div class="list-container shadow-drop-2-center">
+    <div class="tittle">
+        <h1 id="ToDoList">To Do List<span>.</span></h1>
+    </div>
+    <div class="list-container shadow-drop-2-center focus">
         <h2>Notes</h2>
         <div class="list">
-            <div class="item">
+            <!-- <div class="item">
                 <li contenteditable="true" spellcheck="false" class="li-item">hola</li>
                 <div class="options">
                     <button class="disable">Save</button>
                     <button class="delete">Delete</button>
                 </div>
-            </div>
+            </div> -->
         </div>
         <section class="list-new_item">
             <input type="text" class="text-item" id="list-text" placeholder="Add note">
@@ -34,8 +38,8 @@
                 <i class="fas fa-sync-alt"></i>
             </button>
         </section>
-    </div> 
-    <script src="index.js"></script>
+    </div>
+    <script src="app.js"></script>
 </body>
 
 </html>
